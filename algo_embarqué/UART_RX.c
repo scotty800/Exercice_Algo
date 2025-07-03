@@ -76,7 +76,7 @@ void uart_rx_interrupt(UART_RX *uart, char c)
 
     if (uart->Uart_State == RX_RECEIVING)
     {
-        uart->tick_timer = TIMEOUT_TICKS;
+        uart->timer_timeout = TIMEOUT_TICKS;
         if (uart->msg_index >= MAX_MSG_LEN)
         {
             uart_rx_is_error(&uart);
